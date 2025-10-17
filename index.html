@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Times Table App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <div id="startScreen">
+        <h1>Times Table Practice</h1>
+        <button id="startButton">Start</button>
+    </div>
+
+    <div id="gameScreen" style="display: none;">
+        <div id="question"></div>
+        <div id="answer" style="display: none;"></div>
+        
+        <div id="progressBar">
+            <div id="progressBarFill"></div>
+        </div>
+    </div>
+
+    <div id="resultsScreen" style="display: none;">
+        <h1>Results</h1>
+        <table id="resultsTable"></table>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('Service Worker registered: ', reg))
+            .catch(err => console.log('Service Worker registration failed: ', err));
+        });
+      }
+    </script>
+</body>
+</html>
