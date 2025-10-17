@@ -2,7 +2,7 @@
   "name": "Times Table Practice",
   "short_name": "Times Tables",
   "description": "A fun app for practicing times tables up to 12x12.",
-  "start_url": "/index.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4CAF50",
