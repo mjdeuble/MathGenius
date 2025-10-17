@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
+    background-color: #f4f4f9;
+}
+
+/* --- Screen Layouts --- */
+
+#startScreen, #gameScreen, #resultsScreen {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Use 100vh for a full viewport height on mobile */
+    min-height: 100vh; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* --- Start Button --- */
+
+#startButton {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 4px #388e3c;
+    transition: background-color 0.1s;
+}
+
+#startButton:active {
+    background-color: #388e3c;
+    box-shadow: 0 2px #388e3c;
+    transform: translateY(2px);
+}
+
+/* --- Game Screen Elements --- */
+
+#question {
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    user-select: none; /* Prevents text selection on mobile */
+}
+
+#answer {
+    font-size: 3em;
+    color: #007bff; /* Blue for the answer */
+    margin-bottom: 40px;
+    user-select: none;
+}
+
+/* --- Progress Bar --- */
+
+#progressBar {
+    width: 80%;
+    max-width: 400px;
+    height: 12px;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    margin: 30px auto 0; /* Add margin above the bar */
+    overflow: hidden; /* Ensures the fill stays inside the container */
+}
+
+#progressBarFill {
+    height: 100%;
+    background-color: #4CAF50; /* Green fill */
+    width: 0%; /* Initial width, will be updated by JavaScript */
+    transition: width 0.3s ease-out; /* Smooth transition for progress updates */
+}
+
+/* --- Results Screen Table --- */
+
+#resultsTable {
+    width: 90%;
+    max-width: 500px;
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#resultsTable th, #resultsTable td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+#resultsTable th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Ensure headings on results screen are visible */
+#resultsScreen h1 {
+    margin-bottom: 20px;
+}
