@@ -3,8 +3,11 @@
 <head>
     <title>Times Table App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="/MathGenius/"> 
+
     <link rel="stylesheet" href="style.css">
-<base href="/MathGenius/">    
+    
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
@@ -32,7 +35,8 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('sw.js')
+          // Uses the leading slash, which is corrected by the <base> tag
+          navigator.serviceWorker.register('/sw.js')
             .then(reg => console.log('Service Worker registered: ', reg))
             .catch(err => console.log('Service Worker registration failed: ', err));
         });
